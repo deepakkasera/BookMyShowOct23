@@ -1,8 +1,6 @@
 package com.scaler.bookmyshowoct23.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +17,9 @@ public class Show extends BaseModel {
     @ManyToOne
     private Screen screen;
     private Date startTime;
+
+    @Enumerated(EnumType.ORDINAL)
+    @ElementCollection
     private List<Feature> features;
 }
 
