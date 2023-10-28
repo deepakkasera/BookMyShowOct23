@@ -19,6 +19,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
     //select * from user where email_id = email;
 
+
+    @Override
+    User save(User user);
 }
 
 //JPA (Java Persistence API) Repository.
